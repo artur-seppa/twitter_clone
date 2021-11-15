@@ -7,6 +7,7 @@ body{
     background-color: rgb(0, 0, 0);
     width: 100%;
     height: 100vh;
+    font-family: 'Poppins', sans-serif;
 }
 
 .navbar{
@@ -20,53 +21,65 @@ body{
 .container{
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: 0 2rem;
 }
 
 .title{
-    font-size: 7.5rem;
-    color: white;
+    font-size: 6.5rem;
+    color: #F5F8FA;
 }
 
 .subtitle{
-    font-size: 3.5rem;
-    color: lightslategray;
+    font-size: 2.5rem;
+    color: #657786;
 }
 /* =========== link ========== */
 a{
     text-decoration: none;
     font-size: 1.5rem;
+    font-weight: 600;
 }
 
 a:link{
-    color: white;
+    color: lightslategray;
 }
 
 a:visited{
-    color: gray;
+    color: #AAB8C2;
 }
 
 a:hover{
-    color:khaki;
+    color:#657786;
 }
 
 a:active{
-    color: lightblue;
+    color: #F5F8FA;
 }
 
 /* =========== formulário ========== */
+.container_forms{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 5px;
+}
 
 .form-control{
-    width: 15rem;
+    width: 17rem;
     height: 2.3rem;
     border-radius: 1rem;
     padding-left: 2%;
     font-size: 1.4rem;
     margin-bottom: 10px;
+    border: none;
 }
 
 .form-bottom{
     width: 15rem;
     height: 2.3rem;
     border-radius: 1rem;
+    border: none;
+    background-color: #1DA1F2;
+    cursor: pointer;
+    font-size: 1.4rem;
+    margin-top: 6px;
 }
