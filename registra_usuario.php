@@ -12,7 +12,7 @@
     $sql = "insert into usuarios(usuario, email, senha)
     values ('$usuario', '$email', '$senha')";
 
-    //executa a query np bd
+    //executa a query no bd
     if(mysqli_query($link, $sql)){
         echo 'Usuário registrado com sucesso!';
     } else {

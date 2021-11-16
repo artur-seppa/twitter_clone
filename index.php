@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 
 		<title>Twitter clone</title>
-		
+
 		<!-- css externo -->
 		<link rel="stylesheet" type= "text/css" href="index.css"/>
 
@@ -27,12 +27,18 @@
 
 		<div class="container">
 
-		<div>
-		<h1 class="title">Bem vindo ao twitter clone</h1>
-		<p class="subtitle">Veja o que está acontecendo agora...</p>
+		<div class="logo">
+			<picture>
+				<source media="(min-width:650px)" srcset="imagens/twitter_icon_bigger.png">
+				<source media="(min-width:465px)" srcset="imagens/twitter_icon_bigger.png">
+				<img src="imagens/twitter_icon_bigger.png" style="width:500px;">
+			</picture>
 		</div>
 
-		</div>
+		<div class="conteudo">
+		<h1 class="title">Bem vindo ao twitter clone</h1>
+		<p class="subtitle">Veja o que está acontecendo agora...</p>
+		
 
 	    <a href="inscreva-se.php">Inscrever-se</a>
 	            
@@ -45,16 +51,22 @@
 				<input type="password" class="form-control red" id="campo_senha" name="senha" placeholder="Senha" />
 			</div>
 								
-			<button type="buttom" class="btn btn-primary" id="btn_login">Entrar</button>
+			<button type="buttom" class="form-bottom" id="btn_login">Entrar</button>
 
 			<br /><br />
 								
 			<?php 
 
+			if($erro == 1){
+				echo "<p style='color: red'>Usuário e ou senha inválido(s)</p>"; 
+			}
 
 			?>
 
 		</form>
-	
+
+		</div><!--conteudo-->
+		</div><!--container-->
+
 	</body>
 </html>
