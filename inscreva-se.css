@@ -25,8 +25,9 @@ body{
 }
 
 .title{
-    font-size: 6.5rem;
+    font-size: 5.0rem;
     color: #F5F8FA;
+    flex-wrap: wrap;
 }
 
 .subtitle{
@@ -36,7 +37,7 @@ body{
 /* =========== link ========== */
 a{
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 600;
 }
 

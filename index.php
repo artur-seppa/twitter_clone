@@ -4,80 +4,57 @@
 		<meta charset="UTF-8">
 
 		<title>Twitter clone</title>
+		
+		<!-- css externo -->
+		<link rel="stylesheet" type= "text/css" href="index.css"/>
 
-		<!-- jquery - link cdn -->
-		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+		<!-- font-family shippori -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&family=Roboto&family=Shippori+Antique&family=Shippori+Antique+B1&display=swap" rel="stylesheet">
 
-		<!-- bootstrap - link cdn -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	
-		<script>
-			// código javascript						
-		</script>
 	</head>
 
 	<body>
 
-		<!-- Static navbar -->
-	    <nav class="navbar navbar-default navbar-static-top">
-	      <div class="container">
-	        <div class="navbar-header">
-	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-	            <span class="sr-only">Toggle navigation</span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	          </button>
-	          <img src="imagens/icone_twitter.png" />
-	        </div>
-	        
-	        <div id="navbar" class="navbar-collapse collapse">
-	          <ul class="nav navbar-nav navbar-right">
-	            <li><a href="inscreva-se.php">Inscrever-se</a></li>
-	            <li class="">
-	            	<a id="entrar" data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entrar</a>
-					<ul class="dropdown-menu" aria-labelledby="entrar">
-						<div class="col-md-12">
-				    		<p>Você possui uma conta?</h3>
-				    		<br />
-							<form method="post" action="" id="formLogin">
-								<div class="form-group">
-									<input type="text" class="form-control" id="campo_usuario" name="usuario" placeholder="Usuário" />
-								</div>
-								
-								<div class="form-group">
-									<input type="password" class="form-control red" id="campo_senha" name="senha" placeholder="Senha" />
-								</div>
-								
-								<button type="buttom" class="btn btn-primary" id="btn_login">Entrar</button>
+		<?php 
 
-								<br /><br />
-								
-							</form>
-						</form>
-				  	</ul>
-	            </li>
-	          </ul>
-	        </div><!--/.nav-collapse -->
-	      </div>
-	    </nav>
+			//capta a variável erro passada pelo htttps do browser
+			//se a variável for iniciada passa o valor 1 a variável, caso não, passa o valor 0
+			$erro = isset($_GET['erro'])? $_GET['erro'] : 0;
 
+		?>
 
-	    <div class="container">
+		<div class="container">
 
-	      <!-- Main component for a primary marketing message or call to action -->
-	      <div class="jumbotron">
-	        <h1>Bem vindo ao twitter clone</h1>
-	        <p>Veja o que está acontecendo agora...</p>
-	      </div>
-
-	      <div class="clearfix"></div>
+		<div>
+		<h1 class="title">Bem vindo ao twitter clone</h1>
+		<p class="subtitle">Veja o que está acontecendo agora...</p>
 		</div>
 
+		</div>
 
-	    </div>
-	
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	    <a href="inscreva-se.php">Inscrever-se</a>
+	            
+		<form method="post" action="valida_usuario.php" id="formLogin">
+			<div class="form-group">
+				<input type="email" class="form-control" id="campo_usuario" name="email" placeholder="Email" />
+			</div>
+								
+			<div class="form-group">
+				<input type="password" class="form-control red" id="campo_senha" name="senha" placeholder="Senha" />
+			</div>
+								
+			<button type="buttom" class="btn btn-primary" id="btn_login">Entrar</button>
+
+			<br /><br />
+								
+			<?php 
+
+
+			?>
+
+		</form>
 	
 	</body>
 </html>
