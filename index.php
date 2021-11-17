@@ -29,8 +29,8 @@
 
 		<div class="logo">
 			<picture>
-				<source media="(min-width:650px)" srcset="imagens/twitter_icon_bigger.png">
-				<source media="(min-width:465px)" srcset="imagens/twitter_icon_bigger.png">
+				<source media="(max-width:650px)" srcset="imagens/twitter_icon_bigger.png">
+				<source media="(max-width:465px)" srcset="imagens/twitter_icon_bigger.png">
 				<img src="imagens/twitter_icon_bigger.png" style="width:500px;">
 			</picture>
 		</div>
