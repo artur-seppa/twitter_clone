@@ -5,7 +5,7 @@
 
 body{
     background-color: #1DA1F2;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     font-family: 'Poppins', sans-serif;
 }
@@ -15,14 +15,14 @@ body{
     display: flex;
     flex-direction: row;
     padding: 0 2rem;
-    width: 100%;
+    height: 100%;
+    align-items: center;
 }
 
 .logo{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
 }
 
 .conteudo{
@@ -48,15 +48,15 @@ a{
     font-weight: 600;
 }
 
-a:link{
+a:link,label:link{
     color: #F5F8FA;
 }
 
-a:visited{
+a:visited,label:visited{
     color: #14171A;
 }
 
-a:hover{
+a:hover,label:hover{
     color:#E1E8ED;
 }
 
@@ -65,10 +65,8 @@ a:active{
 }
 
 /* =========== formulário ========== */
-.container_forms{
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 5px;
+.form-group{
+    margin-bottom: 10px;
 }
 
 .form-control{
@@ -77,8 +75,12 @@ a:active{
     border-radius: 1rem;
     padding-left: 2%;
     font-size: 1.2rem;
-    margin-bottom: 10px;
     border: none;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid #657786;
 }
 
 .form-bottom{
@@ -86,8 +88,37 @@ a:active{
     height: 2.3rem;
     border-radius: 1rem;
     border: none;
-    background-color: #AAB8C2;
+    background-color: #F5F8FA;
     cursor: pointer;
     font-size: 1.3rem;
     margin-top: 6px;
+}
+
+.form-bottom:hover{
+    background-color: #14171A;
+    color: #F5F8FA;
+}
+
+.links_forms{
+    display: flex;
+    flex-direction: row;
+    margin: 3% 0;
+}
+
+#erro_email, #erro_senha{
+    display: flex;
+    color: rgba(242, 110, 29);
+    margin-left: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* =========== php ========== */
+
+.comunicado_erro{
+    color: red;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
