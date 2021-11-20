@@ -3,7 +3,8 @@
 
     $usuario = $_POST['usuario'];
     $email = $_POST['email'];
-    $senha = $_POST['senha'];
+    $senha = md5($_POST['senha']);
+    /*com a function md5 exercemos a criptografia da senha do usuário com 32 carateres alfanumericos */
 
     $objDb = new db();
     $link = $objDb->connecta_mysql();

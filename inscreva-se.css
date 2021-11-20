@@ -64,13 +64,16 @@ a:active{
     margin-top: 5px;
 }
 
+.form-group{
+    margin-bottom: 10px;
+}
+
 .form-control{
     width: 17rem;
     height: 2.3rem;
     border-radius: 1rem;
     padding-left: 2%;
     font-size: 1.2rem;
-    margin-bottom: 10px;
     border: none;
 }
 
@@ -93,4 +96,13 @@ input:focus {
 .form-bottom:hover{
     background-color: #14171A;
     color: #F5F8FA;
+}
+
+#erro_usuario, #erro_email, #erro_senha{
+    display: flex;
+    color: rgba(242, 110, 29);
+    margin-left: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }

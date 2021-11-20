@@ -16,9 +16,9 @@
 		<!-- javascript -->
 		<script type="text/javascript" >
 
-		const fields = document.querySelectorAll("[required]");
+		/*const fields = document.querySelectorAll("[required]");
 
-		/*function customValidation(event) {
+		function customValidation(event) {
 			const field = event.target
 
 			oninvalid="setCustomValidity(' ')";

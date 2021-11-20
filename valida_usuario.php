@@ -12,7 +12,9 @@ para haver o correto funcionamento */
 require_once('db.class.php');
 
 $email = $_POST['email'];
-$senha = $_POST['senha'];
+$senha = md5($_POST['senha']);
+/*devido a variável ser criptografada, ela deve receber a string criptografada correspondente
+do banco de dados */
 
 $objDb = new db();
 $link = $objDb->connecta_mysql();
