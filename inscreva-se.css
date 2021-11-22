@@ -106,3 +106,12 @@ input:focus {
     font-weight: 600;
     letter-spacing: 0.5px;
 }
+
+.dados_ja_utilizados{
+    display: flex;
+    color: #1DA1F2;
+    margin-left: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}

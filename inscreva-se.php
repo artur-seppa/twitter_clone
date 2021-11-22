@@ -53,7 +53,7 @@
 					// altera a cor do input quando vazio
 					let el = document.getElementById('campo_usuario');
 					el.style.cssText = 'border: 2px solid  #F26E1D;';
-					document.getElementById('erro_usuario').innerHTML = '<p>preencha o nome de Usuário</p>';
+					document.getElementById('erro_usuario').innerHTML = '<p>Preencha o nome de usuário</p>';
 					campo_vazio = true;
   
 				}
@@ -62,7 +62,7 @@
 					// altera a cor do input quando vazio
 					let el = document.getElementById('campo_email');
 					el.style.cssText = 'border: 2px solid #F26E1D;';
-					document.getElementById('erro_email').innerHTML = '<p>preencha o Email</p>';
+					document.getElementById('erro_email').innerHTML = '<p>Preencha o email</p>';
 					campo_vazio = true;
 					
 				}
@@ -71,7 +71,7 @@
 					// altera a cor do input quando vazio
 					let el = document.getElementById('campo_senha');
 					el.style.cssText = 'border: 2px solid  #F26E1D;';
-					document.getElementById('erro_senha').innerHTML = '<p>preencha a Senha</p>';
+					document.getElementById('erro_senha').innerHTML = '<p>Preencha a senha</p>';
 					campo_vazio = true;
   
 				}
@@ -85,6 +85,12 @@
 	</head>
 
 	<body>
+		<?php 
+
+			$erro_usuario = isset($_GET['erro_usuario'])? $_GET['erro_usuario'] : 0 ;
+			$erro_email = isset($_GET['erro_email'])? $_GET['erro_email'] : 0 ;
+		
+		?>
 
 		<navbar class="navbar">
 		<picture>
@@ -108,11 +114,29 @@
 					<div class="form-group">
 						<input type="text" class="form-control" id="campo_usuario" name="usuario" placeholder="Usuário" required>
 						<span id="erro_usuario"></span>
+						<span class="dados_ja_utilizados">
+							<?php 
+
+								if($erro_usuario == 1){
+									echo "Este nome de usuário já está em uso";
+								}
+
+							?>
+						</span>
 					</div>
 
 					<div class="form-group">
 						<input type="email" class="form-control" id="campo_email" name="email" placeholder="Email" required>
 						<span id="erro_email"></span>
+						<span class="dados_ja_utilizados">
+							<?php 
+
+								if($erro_email == 1){
+									echo "Este endereço de email já está em uso";
+								}
+
+							?>
+						</span>
 					</div>
 					
 					<div class="form-group">

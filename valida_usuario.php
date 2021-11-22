@@ -44,7 +44,7 @@ if ($resultado_id){
 
     } else{
         //caso o usuário n exista(null) ele é direcionado a página principal 
-        //e detém pelo método GET : erro=1 
+        //e detém pelo método GET após a interrogação : erro=1 
         header('location: index.php?erro=1');
     }
 }else{

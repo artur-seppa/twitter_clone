@@ -52,7 +52,7 @@
 					// altera a cor do input quando vazio
 					let el = document.getElementById('campo_email');
 					el.style.cssText = 'border: 2px solid #F26E1D;';
-					document.getElementById('erro_email').innerHTML = '<p>preencha o Email</p>';
+					document.getElementById('erro_email').innerHTML = '<p>Preencha o email</p>';
 					campo_vazio = true;
 					
 				}
@@ -61,7 +61,7 @@
 					// altera a cor do input quando vazio
 					let el = document.getElementById('campo_senha');
 					el.style.cssText = 'border: 2px solid  #F26E1D;';
-					document.getElementById('erro_senha').innerHTML = '<p>preencha a Senha</p>';
+					document.getElementById('erro_senha').innerHTML = '<p>Preencha a senha</p>';
 					campo_vazio = true;
   
 				}
