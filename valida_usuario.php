@@ -20,7 +20,7 @@ $objDb = new db();
 $link = $objDb->connecta_mysql();
 
 //efetua o select no bd
-$sql = " SELECT usuario, email FROM usuarios WHERE email = '$email' AND senha = '$senha' ";
+$sql = " SELECT id, usuario, email FROM usuarios WHERE email = '$email' AND senha = '$senha' ";
 
 //executa a query no bd e caso obtenha sucesso, retorna as informações(null or info) do bd para a variável
 $resultado_id = mysqli_query($link, $sql);
@@ -35,8 +35,9 @@ if ($resultado_id){
     //caso o email do usuário esteja cadastrado no banco de dados imprime a mensagem
     if(isset($dados_usuarios['email']) && !empty($dados_usuarios['email'])){
         
-        /*as informações de usuário e email são passadas as variáveis SESSION
+        /*as informações de id, usuário e email são passadas as variáveis SESSION
         de mesmo nome, no qual passaram agora a existir em todo escopo da aplicação */
+        $_SESSION['id_usuario'] = $dados_usuarios['id'];
         $_SESSION['usuario'] = $dados_usuarios['usuario'];
         $_SESSION['email'] = $dados_usuarios['email'];
 

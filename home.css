@@ -3,30 +3,105 @@
     padding: 0;
 }
 
+body{
+    background-color: #14171A;
+    font-family: "TwitterChirp", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
 .container{
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: row;
+    color: rgb(217, 217, 217);
 }
+
+/*======conteúdo da esquerda=======*/
 
 .content-left{
     width: 25%;
     height: 100vh;
     display: flex;
     flex-direction: column;
+    padding: 10px 10px 0 20px;
 }
+
+.username{
+    padding: 15px 5px;
+}
+
+.flex-box{
+    display: flex;
+    flex-direction: row;
+}
+
+.followers{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 15px 5px;
+}
+
+/*======conteúdo do centro=======*/
 
 .content-center{
-    width: 50%;
+    width: 45%;
     height: 100vh;
     display: flex;
     flex-direction: column;
+    padding: 10px 10px 0 10px;
 }
 
+.form_tweet{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.input_tweet{
+    width: 100%;
+    height: 3rem;
+    font-size: 1.2rem;
+    border: none;
+    background: none;
+    color: #E1E8ED;
+    padding-bottom: 4px;
+    padding-top: 4px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.form-bottom{
+    width: 5rem;
+    height: 2rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: #1DA1F2;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 2px;
+    margin-right: 5px;
+}
+
+.form-bottom:hover{
+    background-color: rgba(29,161,242, 0.8);
+}
+
+/*======conteúdo da direita=======*/
+
 .content-right{
-    width: 25%;
+    width: 30%;
     height: 100vh;
     display: flex;
     flex-direction: column;
+    padding: 10px 17px 0 10px;
+}
+
+/*========= fonts =============*/
+
+h2{
+    font-size: 20px;
+    font-weight: 600;
 }
