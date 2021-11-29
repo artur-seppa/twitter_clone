@@ -84,11 +84,56 @@
                 
             }
         }
+
             /*btn procurar usuarios encontrado na pag get_pessoas no qual pega o valor id_usuario
             a ser seguido e passa como parâmetro para a function*/
             function btn_seguir(id_usuario){
-                alert(id_usuario);
+            
+            //altera o css do button ao ser clicado, sendo none para sumir e inline para aparecer
+            let seguir = document.getElementById(`btn_seguir${id_usuario}`);
+			seguir.style.cssText = 'display: none;';
+
+            let deixar_seguir = document.getElementById(`btn_deixar_seguir${id_usuario}`);
+			deixar_seguir.style.cssText = 'display: inline;';
+            
+            /*o id_usuario é passado para a pag seguir.php sendo atribuido 
+            a nova variavel seguir_id_usuario*/
+            $.ajax({
+                url: "seguir.php",
+                method: 'post',
+                //a partir dos ":" o valor de id é passado para a variavel
+                data: {seguir_id_usuario: id_usuario},
+                success: function(data){
+                    alert("registro feito com sucesso");
+                }
+            });
+            
             }
+
+            /*btn deixar de seguir usuarios encontrado na pag get_pessoas, no qual pega 
+            o valor id_usuario a ser deixado de seguir e passa como parâmetro para a function*/
+            function btn_deixar_seguir(id_usuario){
+
+                //altera o css do button ao ser clicado, sendo none para sumir e inline para aparecer
+                let seguir = document.getElementById(`btn_seguir${id_usuario}`);
+			    seguir.style.cssText = 'display: inline;';
+
+                let deixar_seguir = document.getElementById(`btn_deixar_seguir${id_usuario}`);
+			    deixar_seguir.style.cssText = 'display: none;';
+
+                /*o id_usuario é passado para a pag deixar_seguir.php sendo atribuido 
+                a nova variavel deixar_seguir_id_usuario*/
+                $.ajax({
+                    url: "deixar_seguir.php",
+                    method: 'post',
+                    //a partir dos ":" o valor de id é passado para a variavel
+                    data: {deixar_seguir_id_usuario: id_usuario},
+                    success: function(data){
+                        alert("delete feito com sucesso");
+                    }
+                });
+            }
+            
 
         </script>
 

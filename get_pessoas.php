@@ -53,12 +53,21 @@
             echo '</div>';
 
             echo '<span style="margin-bottom: 13px; padding: 13px 14px 0px 0px; ">';
-            echo '<button type="button" onclick="btn_seguir('.$registro['id'].')" class="form-bottom-search" >
+            echo '<button type="button" id="btn_seguir'.$registro['id'].'" onclick="btn_seguir('.$registro['id'].')" class="form-bottom-search" >
             Seguir
             </button>';
-            echo '<span>';
             /*no proprio function btn_seguir se é passado como parâmetro o valor de id equivalente do 
             usuario a ser seguido*/
+            //para cada button se é passado um id com valor proprio pro usuario
+
+            echo '<button type="button" id="btn_deixar_seguir'.$registro['id'].'" style="display: none;" onclick="btn_deixar_seguir('.$registro['id'].')" class="form-bottom-search" >
+            D Seguir
+            </button>';
+            /*no proprio function btn_deixar_seguir se é passado como parâmetro o valor de id equivalente do 
+            usuario a ser deixado de seguir*/
+            //para cada button se é passado um id com valor proprio pro usuario
+
+            echo '<span>';
 
             echo '</div>';
         }
