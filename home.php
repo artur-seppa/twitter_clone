@@ -14,6 +14,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&family=Roboto&family=Shippori+Antique&family=Shippori+Antique+B1&display=swap" rel="stylesheet">
 
+    <!-- SESSION START-->
+    <?php 
+        session_start();
+        /* o session é instanciado antes de tudo e com ele é possivel acessar as variáveis
+        de seção de outras páginas*/
+
+        if(!isset($_SESSION['usuario'])){
+        /*se o indice de SESSION de usuario não existe / nao tem valor,
+         o usuário é direcionado a página principal*/
+            header('location: index.php?erro=1');
+        }
+
+        
+
+    ?>
+
     <!--jquery-->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
@@ -56,6 +72,7 @@
                 success: function(data){
                     //passa para a div com id=tweets o responseText da pag get_tweet.php
                     $('#tweets').html(data);
+                    atualizaTweet();
                 }
             });
 
@@ -140,39 +157,83 @@
 </head>
 
 <body onload="atualizaTweet()">
-    <?php 
-        session_start();
-        /* o session é instanciado antes de tudo e com ele é possivel acessar as variáveis
-        de seção de outras páginas*/
+    
+    <?php
+        require_once('db.class.php');
 
-        if(!isset($_SESSION['usuario'])){
-        /*se o indice de SESSION de usuario não existe / nao tem valor,
-         o usuário é direcionado a página principal*/
-            header('location: index.php?erro=1');
+        $objDb = new db();
+        $link = $objDb->connecta_mysql();
+
+        $id_usuario = $_SESSION['id_usuario'];
+
+        /*seleciona a quantidade de tweets presentes na tabela a partir do COUNT()*/
+        $sql = "SELECT COUNT(*) AS qtde_tweets FROM tweet WHERE id_usuario = $id_usuario ";
+
+        //executa a query no bd e caso obtenha sucesso, retorna as informações(null or info) do bd para a variável
+        $resultado_id = mysqli_query($link, $sql);
+
+        $qtde_tweets = 0;
+
+        //caso exista alguma informação : exerce o retorno delas para um array(null or info)
+        //caso ocorra erro de sintaxe no SELECT : imprime a mensagem de erro
+        if($resultado_id){
+
+            //passa os resources como um array para a variável
+            $registro = mysqli_fetch_array($resultado_id);
+
+            $qtde_tweets = $registro['qtde_tweets'];
+
+        }else{
+            echo ('erro na consulta do banco de dados');
+        }
+
+
+        /*seleciona a quantidade de seguidores presentes na tabela a partir do COUNT()*/
+        $sql = "SELECT COUNT(*) AS qtde_seguidores FROM usuarios_seguidores WHERE seguindo_id_usuario = $id_usuario ";
+
+        //executa a query no bd e caso obtenha sucesso, retorna as informações(null or info) do bd para a variável
+        $resultado_id = mysqli_query($link, $sql);
+
+        $qtde_seguidores = 0;
+
+        //caso exista alguma informação : exerce o retorno delas para um array(null or info)
+        //caso ocorra erro de sintaxe no SELECT : imprime a mensagem de erro
+        if($resultado_id){
+
+            //passa os resources como um array para a variável
+            $registro = mysqli_fetch_array($resultado_id);
+
+            $qtde_seguidores = $registro['qtde_seguidores'];
+
+        }else{
+            echo ('erro na consulta do banco de dados');
         }
     ?>
-</body>
     
     <div class="container">
         <div class="content-left">
-             <!-- <a href="sair.php">Sair</a> -->
+              <a href="sair.php">Sair</a> 
             <h2 class="username" style="border-bottom: 2px solid rgb(47, 51, 54);">
                 <?php 
                     /* com o session iniciado anteriormente na página, capturamos o nome de usuario e 
                     o email passado pela variavel session da página de validação */
-                    echo  $_SESSION['usuario'];
+                    echo($_SESSION['usuario']);
                 ?>
             </h2>
 
             <div class="flex-box">
                 <div class="followers">
                     <h2>Seguidores</h2>
-                    <span id="seguidores">1</span>
+                    <span id="seguidores">
+                        <?php echo $qtde_seguidores; ?>
+                    </span>
                 </div>
 
                 <div class="followers">
                     <h2>Tweets</h2>
-                    <span id="publicaçoes">1</span>
+                    <span id="publicaçoes">
+                        <?php echo $qtde_tweets; ?>
+                    </span>
                 </div>
             </div>
         </div>
@@ -208,4 +269,5 @@
 
     </div>
 
+</body>
 </html>

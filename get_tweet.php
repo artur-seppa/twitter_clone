@@ -18,14 +18,18 @@
     $link = $objDb->connecta_mysql();
 
     /*seleciona os tweets da tabela a partir do ordenamento da data_inclusao
-    de forma decrescente(DESC), ou seja, da data mais nova para a mais antiga*/
+    de forma decrescente(DESC), ou seja, da data mais nova para a mais antiga. E também 
+    seleciona a partir do OR(OU) o id_usuario de outros usuarios a partir da tabela usuarios_seguidores*/
 
     /*o date_format altera a forma de impressao da data ficando a esquerda da variável a data que vai ser
     alterada e a direita fica a nova formatação. Após a alteraçao recebe um apelido para indicar
     o novo formato*/
+
     $sql = "SELECT  DATE_FORMAT(t.data_inclusao, '%d %b %y - %H:%i') as data_inclusao_format, t.tweet, u.usuario 
     FROM tweet as t JOIN usuarios as u ON(t.id_usuario = u.id) 
-    WHERE id_usuario = $id_usuario ORDER BY data_inclusao DESC";
+    WHERE id_usuario = $id_usuario 
+    OR id_usuario IN (select seguindo_id_usuario from usuarios_seguidores where id_usuario = $id_usuario )
+    ORDER BY data_inclusao DESC";
     //o id_usuario tem de ser igual ao id_usuario da SESSION para haver a busca
 
     //executa a query no bd e caso obtenha sucesso, retorna as informações(null or info) do bd para a variável
