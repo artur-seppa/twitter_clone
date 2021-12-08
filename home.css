@@ -6,6 +6,10 @@
 body{
     background-color: #000000;
     font-family: "TwitterChirp", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    width: 100%;
+    height: 100vh;
+
+    block-size: fit-content;
 }
 
 .container{
@@ -46,16 +50,32 @@ body{
 
 .content-center{
     width: 45%;
-    height: 100vh;
+    height: 100%;
+
+    block-size: fit-content;
+    
     display: flex;
     flex-direction: column;
-    padding: 10px 10px 0 10px;
+    /*padding: 10px 10px 0 10px;*/
+    padding-top: 10px;
+
+    border-left: 1px solid rgb(47, 51, 54);
+    border-right: 1px solid rgb(47, 51, 54);
+}
+
+.position{
+  position: -webkit-sticky;
+  position: sticky;
+  top: -1px;
+
+  background-color: #000000;
 }
 
 .form_tweet{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    margin-bottom: 15px;
 }
 
 .input_tweet{
@@ -220,4 +240,10 @@ input:focus {
 h2{
     font-size: 20px;
     font-weight: 600;
+}
+
+.rule{
+    border-bottom: 1px solid rgb(47, 51, 54);
+    width: 100vw; 
+    display: block;
 }

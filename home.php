@@ -97,8 +97,9 @@
 
             }
 
+            //caso n tenha nada escrito passa o valor null a div id = pessoas.
             if(search.length == 0){
-                
+                document.getElementById('pessoas').innerHTML = '';
             }
         }
 
@@ -212,8 +213,9 @@
     
     <div class="container">
         <div class="content-left">
+            <span class="position">
               <a href="sair.php">Sair</a> 
-            <h2 class="username" style="border-bottom: 2px solid rgb(47, 51, 54);">
+            <h2 class="username" style="border-bottom: 1px solid rgb(47, 51, 54);">
                 <?php 
                     /* com o session iniciado anteriormente na página, capturamos o nome de usuario e 
                     o email passado pela variavel session da página de validação */
@@ -236,10 +238,12 @@
                     </span>
                 </div>
             </div>
+            
         </div>
 
         <div class="content-center">
-            <h2 class="username" style="border-bottom: 2px solid rgb(47, 51, 54);">Página Inicial</h2>
+            <span class="position" style="border-bottom: 1px solid rgb(47, 51, 54); margin-bottom: 4px;">
+            <h2 class="username" style="border-bottom: 1px solid rgb(47, 51, 54);">Página Inicial</h2>
 
     
             <form id="form_tweet" class="form_tweet">
@@ -248,13 +252,16 @@
             <button type="submit" id="btn_button" class="form-bottom" onclick="btn_start()">Tweetar</button>
             </form>
 
+            </span>
+
             <!-- carrega os tweets para dentro da div -->
             <div id="tweets"></div>
      
         </div>
 
         <div class="content-right">
-            <h2 class="username" style="border-bottom: 2px solid rgb(47, 51, 54);">
+            <span class="position">
+            <h2 class="username" style="border-bottom: 1px solid rgb(47, 51, 54);">
             Procurar por pessoas
             </h2>
 
@@ -265,6 +272,7 @@
 
             <!-- carrega os usuário para dentro da div -->
             <div id="pessoas"></div>
+            </span>
         </div>
 
     </div>
