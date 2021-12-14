@@ -27,16 +27,47 @@ body{
     height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 10px 10px 0 20px;
+    padding-top: 10px;
+}
+
+.usuario{
+    margin: 7px;
+    padding: 14px 10px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.usuario:hover{
+    background-color: rgba(47, 51, 54, 0.5);
+    border-radius: 35px;
+    cursor: pointer;
+}
+
+.user_block{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 80%;
+}
+
+.reticencias{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 21px;
 }
 
 .username{
-    padding: 15px 5px;
+    padding: 15px 10px;
 }
 
 .flex-box{
     display: flex;
     flex-direction: row;
+    padding: 0px 10px;
 }
 
 .followers{
@@ -44,6 +75,15 @@ body{
     flex-direction: column;
     width: 50%;
     padding: 15px 5px;
+}
+
+#seguidores{
+    font-size: 18px;
+    
+}
+
+#publicaçoes{
+    font-size: 18px;
 }
 
 /*======conteúdo do centro=======*/
@@ -76,6 +116,8 @@ body{
     flex-direction: column;
     align-items: flex-end;
     margin-bottom: 15px;
+
+    padding: 0px 10px;
 }
 
 .input_tweet{
@@ -240,6 +282,12 @@ input:focus {
 h2{
     font-size: 20px;
     font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+h3{
+    font-weight: 600;
+    letter-spacing: 0.1px;
 }
 
 .rule{

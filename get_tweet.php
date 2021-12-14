@@ -43,11 +43,11 @@
         /*enquanto ainda existir info a serem passadas para o array, elas serão impressas
         uma de cada vez no echo */
         while($registro = mysqli_fetch_array($resultado_id)){
-            echo '<div style="border-bottom: 1px solid rgb(47, 51, 54); margin: 4px 0;>';
+            echo '<div style="border-bottom: 1px solid rgb(47, 51, 54); margin: 4px 0; padding: 0px 10px;>';
                 echo '<span style="color: rgb(217, 217, 217); font-weight: 600; font-size: 17px;">'.$registro['usuario'].'</span>';
                 echo '<span style="color: rgb(110, 118, 125); font-weight: 400; font-size: 16px;"> · '.$registro['data_inclusao_format'].'</span>';
                 echo '<span style="color: rgb(217, 217, 217); font-weight: 500; font-size: 17px;">
-                <p style="margin-bottom: 3px;">'.$registro['tweet'].'</p></span>';
+                <p style="margin-bottom: 4px;">'.$registro['tweet'].'</p></span>';
             echo '</div>';
         }
 

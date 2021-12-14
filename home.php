@@ -214,15 +214,25 @@
     <div class="container">
         <div class="content-left">
             <span class="position">
-              <a href="sair.php">Sair</a> 
-            <h2 class="username" style="border-bottom: 1px solid rgb(47, 51, 54);">
+            <h3 class="usuario" style="border-bottom: 1px solid rgb(47, 51, 54);">
+                <span class="user_block">
                 <?php 
                     /* com o session iniciado anteriormente na página, capturamos o nome de usuario e 
                     o email passado pela variavel session da página de validação */
                     echo($_SESSION['usuario']);
+                    echo "</br>";
+                    echo '<span style="color: rgb(110, 118, 125);">'.($_SESSION['email']).'</span>';
                 ?>
-            </h2>
 
+                </span>
+                
+                <span class="reticencias">
+                    ...
+                </span>
+
+            </h3>
+
+            <!--<a href="sair.php">Sair</a>--> 
             <div class="flex-box">
                 <div class="followers">
                     <h2>Seguidores</h2>
@@ -238,7 +248,7 @@
                     </span>
                 </div>
             </div>
-            
+          </span> <!--position-->
         </div>
 
         <div class="content-center">
@@ -261,9 +271,6 @@
 
         <div class="content-right">
             <span class="position">
-            <h2 class="username" style="border-bottom: 1px solid rgb(47, 51, 54);">
-            Procurar por pessoas
-            </h2>
 
             <form id="form_procurar" class="form_tweet">
             <!-- <textarea name="text" class="input_tweet" rows="5" cols="33" placeholder="O que está acontecendo ?" style="overflow:hidden;" resize:none; wrap="soft" maxlength="140"></textarea> -->
